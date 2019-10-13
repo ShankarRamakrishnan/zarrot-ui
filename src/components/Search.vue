@@ -1,12 +1,23 @@
 <template>
     <div>
-        <input type="text" class="search" placeholder="Search for restaurants or dishes" autocomplete="off" value="">
-        <button class=""><i class="icon-close-thin _3pIVC"></i><span class="py3n3">ESC</span></button>
+        <input type="text" class="search" placeholder="Search for restaurants or dishes" v-model="searchString">
+        <button class="" v-on:click="clear"><span class="">ESC</span></button>
     </div>
 </template>
 
 <script>
+var searchString = ''
 export default {
+  data: function () {
+    return {
+      searchString
+    }
+  },
+  methods: {
+    clear: function () {
+      this.searchString = ''
+    }
+  }
 }
 </script>
 
