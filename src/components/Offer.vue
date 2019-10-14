@@ -34,46 +34,21 @@
       <div class="suggestions">
         <div class="title">suggestions</div>
         <ul>
-          <li>
+          <li v-for="coupon in coupons" v-bind:key="coupon.id">
             <div class="sug-item">
-              <div class="title">Get 20% discount using Citi Bank Cards</div>
+              <div class="title">{{coupon.title}}</div>
               <img
-                src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_40,h_40/c8rijyftetnv3kgatbbt"
+                v-bind:src="coupon.imageUrl"
                 class="coupon-img"
               >
               <div class="img-details">
                 <div class="label">type:</div>
-                <div class="description">Regular</div>
+                <div class="description">{{coupon.type}}</div>
                 <div class="label">Code:</div>
-                <div class="description">CITIFOODIE</div>
+                <div class="description">{{coupon.code}}</div>
               </div>
               <div class="description">
-                "Offer valid twice per user per month",
-                "Maximum discount is Rs.200 only",
-                "Offer valid on a minimum cart value of Rs.600",
-                "Offer valid till Oct 31, 2019 23:59 PM"
-              </div>
-            </div>
-          </li>
-
-          <li>
-            <div class="sug-item">
-              <div class="title">Get 20% discount using Citi Bank Cards</div>
-              <img
-                src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_40,h_40/c8rijyftetnv3kgatbbt"
-                class="coupon-img"
-              >
-              <div class="img-details">
-                <div class="label">type:</div>
-                <div class="description">Regular</div>
-                <div class="label">Code:</div>
-                <div class="description">CITIFOODIE</div>
-              </div>
-              <div class="description">
-                "Offer valid twice per user per month",
-                "Maximum discount is Rs.200 only",
-                "Offer valid on a minimum cart value of Rs.600",
-                "Offer valid till Oct 31, 2019 23:59 PM"
+                {{coupon.details.join(',')}}
               </div>
             </div>
           </li>
@@ -86,15 +61,18 @@
 <script>
 import offerService from "../services/offerService";
 
-var off = {};
+var off = {}
+var coupons = {}
 offerService.then(offerData => {
-  off = offerData.restaurants;
+  off = offerData.restaurants
+  coupons = offerData.coupons
 });
 
 export default {
   data() {
     return {
-      offers: off
+      offers: off,
+      coupons
     };
   },
   methods: {
