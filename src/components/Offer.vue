@@ -11,16 +11,16 @@
                   <img v-bind:src="offer.imageUrl" class="thumbnail-img">
                   <div class="restaurant">
                     <div class="name">{{offer.name}}</div>
-                    <div class="location">Kandanchavadi Perungudi, OMR Chennai</div>
+                    <div class="location">{{offer.location}}</div>
                   </div>
                 </div>
                 <div class="details">
                   <div class="label">Cuisine:</div>
                   <div class="description">{{offer.cuisines.join(',')}}</div>
                   <div class="label">Cost for one person:</div>
-                  <div class="description">1000</div>
+                  <div class="description">{{offer.cost}}</div>
                   <div class="label">Hours:</div>
-                  <div class="description">12pm - 10pm</div>
+                  <div class="description">{{offer.hours}}</div>
                 </div>
                 <div class="action-bar">
                   <div class="action-item">Call</div>

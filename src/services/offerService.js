@@ -6,7 +6,7 @@ var axiosInstance = axios.create({
   headers: {'Content-type': 'application/json'}
 })
 
-var offerPromise = axiosInstance.get('/5da4b0b63500006d004a78a2').then(function (value) {
+var offerPromise = axiosInstance.get('/5da4c1eb3500006d004a78d2').then(function (value) {
   console.log(value.data)
   return value.data
 })
