@@ -1,7 +1,6 @@
 <template>
     <div class="logo-bar">
         <ul>
-            
             <!-- <li class="logo">
                 <router-link class="head" to="/">
                     <span align="left">Zarrot</span>
@@ -25,8 +24,6 @@ export default {
 <style lang="css">
     .logo-bar {
         background: green;
-        
-        
     }
     .logo-bar ul {
         margin: 0;
@@ -38,14 +35,10 @@ export default {
         padding-right: 10px;
         height: 50px;
     }
-    
     .login a{
        text-decoration: none;
-       
     }
     .login span {
         color: #fff;
-        
     }
 </style>
-
