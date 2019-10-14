@@ -48,7 +48,12 @@ export default {
   data() {
     return {
       offers: off
-    };
+    }
+  },
+  methods: {
+    addToCart (event, offerId) {
+      console.log('sdfasdf', offerId)
+    }
   }
 };
 </script>

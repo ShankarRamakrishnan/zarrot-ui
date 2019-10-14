@@ -10,7 +10,7 @@ var dummyOfferData = [{
   offerPercentage: '15'
 },
 {
-  id: '1',
+  id: '2',
   restaurantName: 'JuiceSome',
   category: 'Fast Food',
   imageUrl: 'https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/rviz4tn4rh5gi20ixkhe',
@@ -19,7 +19,7 @@ var dummyOfferData = [{
   offerPercentage: '15'
 },
 {
-  id: '1',
+  id: '3',
   restaurantName: 'JuiceSome',
   category: 'Fast Food',
   imageUrl: 'https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/rviz4tn4rh5gi20ixkhe',
@@ -28,7 +28,7 @@ var dummyOfferData = [{
   offerPercentage: '15'
 },
 {
-  id: '1',
+  id: '4',
   restaurantName: 'JuiceSome',
   category: 'Fast Food',
   imageUrl: 'https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/rviz4tn4rh5gi20ixkhe',
