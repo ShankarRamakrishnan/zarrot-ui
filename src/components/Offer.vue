@@ -1,7 +1,7 @@
 <template>
   <div class="content-area">
     <div class="wrapper">
-      <div class="filter-section"></div>
+      <!-- <div class="filter-section"></div> -->
       <div class="lists">
         <ul>
           <li v-for="offer in offers" v-bind:key="offer.id">
@@ -31,31 +31,78 @@
           </li>
         </ul>
       </div>
-      <div class="suggestions"></div>
+      <div class="suggestions">
+        <div class="title">suggestions</div>
+        <ul>
+          <li>
+            <div class="sug-item">
+              <div class="title">Get 20% discount using Citi Bank Cards</div>
+              <img
+                src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_40,h_40/c8rijyftetnv3kgatbbt"
+                class="coupon-img"
+              >
+              <div class="img-details">
+                <div class="label">type:</div>
+                <div class="description">Regular</div>
+                <div class="label">Code:</div>
+                <div class="description">CITIFOODIE</div>
+              </div>
+              <div class="description">
+                "Offer valid twice per user per month",
+                "Maximum discount is Rs.200 only",
+                "Offer valid on a minimum cart value of Rs.600",
+                "Offer valid till Oct 31, 2019 23:59 PM"
+              </div>
+            </div>
+          </li>
+
+          <li>
+            <div class="sug-item">
+              <div class="title">Get 20% discount using Citi Bank Cards</div>
+              <img
+                src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_40,h_40/c8rijyftetnv3kgatbbt"
+                class="coupon-img"
+              >
+              <div class="img-details">
+                <div class="label">type:</div>
+                <div class="description">Regular</div>
+                <div class="label">Code:</div>
+                <div class="description">CITIFOODIE</div>
+              </div>
+              <div class="description">
+                "Offer valid twice per user per month",
+                "Maximum discount is Rs.200 only",
+                "Offer valid on a minimum cart value of Rs.600",
+                "Offer valid till Oct 31, 2019 23:59 PM"
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
-import offerService from '../services/offerService'
+import offerService from "../services/offerService";
 
-var off = {}
+var off = {};
 offerService.then(offerData => {
-  off = offerData.restaurants
-})
+  off = offerData.restaurants;
+});
 
 export default {
-  data () {
+  data() {
     return {
       offers: off
-    }
+    };
   },
   methods: {
-    addToCart (event, offerId) {
-      console.log('sdfasdf', offerId)
+    addToCart(event, offerId) {
+      console.log("sdfasdf", offerId);
     }
   }
-}
+};
 </script>
 
 <style>
@@ -67,20 +114,20 @@ export default {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  max-width: 1160px;
+  max-width: 1100px;
 }
 
 .filter-section,
 .suggestions {
   position: relative;
-  background: #fff;
+  background: #f3f3f3;
   -webkit-box-shadow: none;
   box-shadow: none;
   margin: 1rem 0.5em;
   border-radius: 0.28571429rem;
   border: 1px solid #e7e7e7;
   float: left;
-  width: 21%;
+  width: 33%;
   min-height: 800px;
 }
 .lists {
@@ -93,7 +140,7 @@ export default {
   border-radius: 0.28571429rem;
   border: 1px solid #e7e7e7;
   float: left;
-  width: 51%;
+  width: 60%;
   min-height: 800px;
 }
 .lists li {
@@ -183,5 +230,48 @@ export default {
 .action-item.active:hover {
   background: green;
   color: #fff;
+}
+.title {
+  text-transform: capitalize;
+  font-weight: bold;
+  font-size: 17px;
+  padding: 10px;
+}
+.suggestions .title {
+  border-bottom: solid thin #e7e7e7;
+  background: #fff;
+}
+.suggestions ul {
+  margin: 0;
+  list-style: none;
+  padding: 0;
+  text-align: left;
+}
+.sug-item {
+  overflow: auto;
+}
+.suggestions li {
+  padding: 10px;
+  background: #fff;
+  margin-bottom: 20px;
+}
+.sug-item .title {
+  font-size: 14px;
+}
+.img-details {
+  float: left;
+  width: calc(100% - 70px);
+  line-height: 2;
+  margin-bottom: 16px;
+}
+.img-details .label {
+  float: left;
+  width: 20%;
+}
+.img-details .description {
+  float: left;
+  width: 75%;
+  padding-bottom: 10px;
+  font-size: 14px;
 }
 </style>
