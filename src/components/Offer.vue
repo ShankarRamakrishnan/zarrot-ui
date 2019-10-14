@@ -10,13 +10,13 @@
                 <div class="header">
                   <img v-bind:src="offer.imageUrl" class="thumbnail-img">
                   <div class="restaurant">
-                    <div class="name">Paradise Briyani</div>
+                    <div class="name">{{offer.name}}</div>
                     <div class="location">Kandanchavadi Perungudi, OMR Chennai</div>
                   </div>
                 </div>
                 <div class="details">
                   <div class="label">Cuisine:</div>
-                  <div class="description">Briyani</div>
+                  <div class="description">{{offer.cuisines.join(',')}}</div>
                   <div class="label">Cost for one person:</div>
                   <div class="description">1000</div>
                   <div class="label">Hours:</div>
