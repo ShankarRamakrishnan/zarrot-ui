@@ -24,7 +24,7 @@
                 </div>
                 <div class="action-bar">
                   <div class="action-item">Call</div>
-                  <div class="action-item active">Order Now</div>
+                  <div class="action-item active" v-on:click="addToCart($event, offer.id)">Order Now</div>
                 </div>
               </div>
             </div>
@@ -37,15 +37,15 @@
 </template>
 
 <script>
-import offerService from "../services/offerService";
+import offerService from '../services/offerService'
 
-var off = {};
+var off = {}
 offerService.then(offerData => {
-  off = offerData;
-});
+  off = offerData.restaurants
+})
 
 export default {
-  data() {
+  data () {
     return {
       offers: off
     }
@@ -55,7 +55,7 @@ export default {
       console.log('sdfasdf', offerId)
     }
   }
-};
+}
 </script>
 
 <style>
