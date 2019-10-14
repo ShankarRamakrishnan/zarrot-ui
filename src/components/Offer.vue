@@ -257,6 +257,7 @@ export default {
 }
 .sug-item .title {
   font-size: 14px;
+  margin-bottom: 15px;
 }
 .img-details {
   float: left;
